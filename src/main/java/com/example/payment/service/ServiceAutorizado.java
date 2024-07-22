@@ -1,5 +1,6 @@
 package com.example.payment.service;
 
+import com.example.payment.controller.dto.TranferenciaDto;
 import com.example.payment.entity.Transferencia;
 import com.example.payment.exception.PaymentException;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,7 @@ public class ServiceAutorizado {
         this.clientAutorizado = clientAutorizado;
     }
 
-    public boolean isAutorizado(Transferencia transferencia) {
+    public boolean isAutorizado(TranferenciaDto dto) {
         var resp = clientAutorizado.isAutorizado();
 
         if (resp.getStatusCode().isError()){

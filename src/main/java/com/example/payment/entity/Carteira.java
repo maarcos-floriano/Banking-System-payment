@@ -48,6 +48,22 @@ public class Carteira {
     this.tipoCarteira = tipoCarteira;
   }
 
+  public boolean isCarteiraUsuario() {
+    return this.tipoCarteira.equals(TipoCarteira.Tipo.usuario.get());
+  }
+
+  public boolean isValorSuficiente(BigDecimal valor) {
+    return this.saldo.doubleValue() >= valor.doubleValue();
+  }
+
+  public void enviarSaldo(BigDecimal valor) {
+    this.saldo = this.saldo.subtract(valor);
+  }
+
+  public void adicionarSaldo(BigDecimal valor) {
+    this.saldo = this.saldo.add(valor);
+  }
+
   public Long getId() {
     return this.id;
   }
@@ -111,5 +127,4 @@ public class Carteira {
   public void setTipoCarteira(TipoCarteira tipoCarteira) {
     this.tipoCarteira = tipoCarteira;
   }
-
 }

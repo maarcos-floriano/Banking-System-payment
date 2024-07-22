@@ -5,7 +5,7 @@ import com.example.payment.entity.TipoCarteira;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record dtoCriarCarteira(@NotBlank String nome,
+public record CriarCarteiraDto(@NotBlank String nome,
                                @NotBlank String sobrenome,
                                @NotBlank String email,
                                @NotBlank String cpfCnpj,

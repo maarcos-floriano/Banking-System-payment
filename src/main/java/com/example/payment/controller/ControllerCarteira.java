@@ -1,6 +1,6 @@
 package com.example.payment.controller;
 
-import com.example.payment.controller.dto.dtoCriarCarteira;
+import com.example.payment.controller.dto.CriarCarteiraDto;
 import com.example.payment.entity.Carteira;
 import com.example.payment.service.ServiceCarteira;
 import jakarta.validation.Valid;
@@ -18,7 +18,7 @@ public class ControllerCarteira {
     }
 
     @PostMapping("/carteira")
-    public ResponseEntity<Carteira> criarCarteira(@RequestBody @Valid dtoCriarCarteira dto) {
+    public ResponseEntity<Carteira> criarCarteira(@RequestBody @Valid CriarCarteiraDto dto) {
 
         var carteira = serviceCarteira.criarCarteira(dto);
 

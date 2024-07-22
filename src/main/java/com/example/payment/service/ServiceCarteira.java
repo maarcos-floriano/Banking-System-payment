@@ -1,6 +1,6 @@
 package com.example.payment.service;
 
-import com.example.payment.controller.dto.dtoCriarCarteira;
+import com.example.payment.controller.dto.CriarCarteiraDto;
 import com.example.payment.entity.Carteira;
 import com.example.payment.exception.CarteiraExistenteException;
 import com.example.payment.repository.RepositorioCarteira;
@@ -15,7 +15,7 @@ public class ServiceCarteira {
         this.repositorioCarteira = repositorioCarteira;
     }
 
-    public Carteira criarCarteira(dtoCriarCarteira dto) {
+    public Carteira criarCarteira(CriarCarteiraDto dto) {
 
         var carteiraDb = repositorioCarteira.findByCpfCnpjOrEmail(dto.cpfCnpj(), dto.email());
 

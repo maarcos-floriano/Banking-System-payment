@@ -27,6 +27,12 @@ public class Transferencia {
     public Transferencia() {
     }
 
+    public Transferencia(Carteira remetente, Carteira destinatario, BigDecimal valor) {
+        this.remetente = remetente;
+        this.destinatario = destinatario;
+        this.valor = valor;
+    }
+
     public BigDecimal getValor() {
         return valor;
     }

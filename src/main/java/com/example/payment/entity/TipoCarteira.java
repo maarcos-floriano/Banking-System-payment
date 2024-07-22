@@ -2,6 +2,8 @@ package com.example.payment.entity;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "tipo_carteira")
 public class TipoCarteira {
@@ -62,5 +64,19 @@ public class TipoCarteira {
     public TipoCarteira get() {
       return new TipoCarteira(this.id, this.descricao);
     }
+
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    TipoCarteira that = (TipoCarteira) o;
+    return Objects.equals(id, that.id) && Objects.equals(descricao, that.descricao);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(id, descricao);
   }
 }
